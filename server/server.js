@@ -1,8 +1,9 @@
 const mongoose = require("mongoose");
 const Document = require("./Document");
+require("dotenv").config();
 
-const uri =
-  "mongodb+srv://admin:p@ssw0rd!@cluster0.ki47b.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+const uri = process.env.MONGO_URI;
+
 mongoose
   .connect(uri, {
     useNewUrlParser: true,
